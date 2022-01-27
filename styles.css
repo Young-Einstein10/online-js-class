@@ -1,0 +1,15 @@
+.text-red {
+  color: red;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 1.5rem;
+  height: 40px;
+  cursor: pointer;
+}

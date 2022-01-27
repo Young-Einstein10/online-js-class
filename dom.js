@@ -12,7 +12,7 @@ Benefits of using the Javascript DOM
 - getElementById
 - getElementByClassName
 - getElementByTagName
-- querySelecetor
+- querySelector
 - querySelectorAll
 */
 
@@ -20,10 +20,10 @@ Benefits of using the Javascript DOM
 const locationEl = document.getElementById("location");
 
 // Selecting an element with a class: use getElementByClassName
-const wrapper = document.getElementsByClassName("wrapper");
+const wrapper = document.querySelector(".wrapper");
 
 // Selecting an element with either a classname, id or attribute
-const address = document.querySelector(".wrapper .address");
+const address = document.querySelector(".wrapper p:nth-child(3)");
 
 const title = document.querySelector(".title");
 const loginBtn = document.querySelector(".login-btn");
@@ -54,3 +54,60 @@ loginBtn.textContent = "Signin";
 // Changing Content
 
 loginBtn.textContent = "Signin";
+
+// Creating Elements in the DOM (Let's create a Paragraph Element)
+let newPara = document.createElement("p");
+newPara.textContent = "Hello World, I am a newly created paragraph";
+newPara.className = "text-blue";
+wrapper.append(newPara);
+// wrapper.insertAdjacentElement("afterbegin", newPara);
+
+// Create a Delete Button and Append to the DOM
+let deleteBtn = document.createElement("button");
+deleteBtn.textContent = "Delete";
+deleteBtn.className = "delete-btn";
+deleteBtn.onclick = function () {
+  console.log("Hello World");
+  // newPara.remove();
+  wrapper.removeChild(address);
+};
+
+document.body.appendChild(deleteBtn);
+
+// Displaying a list of items on our webpage
+const hobbies = [
+  "Reading",
+  "Sleeping",
+  "Drinking",
+  "Hiking",
+  "Swimming",
+  "Reading",
+  "Sleeping",
+];
+
+function displayItem(item) {
+  const newElement = document.createElement("p");
+  newElement.textContent = item;
+  newElement.className = "list-item";
+  wrapper.append(newElement);
+}
+
+// for (let i = 0; i < hobbies.length; i++) {
+//   const hobby = hobbies[i];
+
+//   displayItem(hobby);
+// }
+
+// Displaying Object Properties  on our webpage
+const details = {
+  name: "Michael Lord",
+  age: 40,
+  addres: "Ikorodu, Lagos State",
+  hobbies: hobbies,
+};
+
+for (const key in details) {
+  const value = details[key];
+
+  displayItem(`${key}: ${value}`);
+}
