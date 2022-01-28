@@ -19,6 +19,8 @@ Benefits of using the Javascript DOM
 // Selecting an element with an ID: use getElementById
 const locationEl = document.getElementById("location");
 
+const loginBtn = document.querySelector(".login-btn");
+
 // Selecting an element with a class: use getElementByClassName
 const wrapper = document.querySelector(".wrapper");
 
@@ -26,7 +28,6 @@ const wrapper = document.querySelector(".wrapper");
 const address = document.querySelector(".wrapper p:nth-child(3)");
 
 const title = document.querySelector(".title");
-const loginBtn = document.querySelector(".login-btn");
 
 // Styling Using Javascript
 title.style.color = "green";
@@ -66,6 +67,7 @@ wrapper.append(newPara);
 let deleteBtn = document.createElement("button");
 deleteBtn.textContent = "Delete";
 deleteBtn.className = "delete-btn";
+
 deleteBtn.onclick = function () {
   console.log("Hello World");
   // newPara.remove();
@@ -111,3 +113,50 @@ for (const key in details) {
 
   displayItem(`${key}: ${value}`);
 }
+
+/*  
+  Events in Javascript
+  - Events are signals telling you something as occured in the webpage.
+
+  Kinds of Events in JS
+    - Click
+    - MouseOver
+    - MouseOut
+    - Keyboard
+
+  Events can be added to HTML Elements in 3 different ways:-
+   - Inline Events
+   - Event Handler Method
+   - Event Listener Method
+*/
+
+// Inline Events: are usually addded within elements. They are attributes of the elements itself.
+function changeEvent() {
+  console.log("This is an inline event.");
+}
+
+// Event Handler Method: They normally start with the 'on' keyword along with the actual event type.
+loginBtn.onclick = function () {
+  alert("Login Successsfully.");
+  loginBtn.textContent = "Signout";
+};
+
+loginBtn.onmouseover = function () {
+  loginBtn.style.backgroundColor = "yellow";
+};
+
+loginBtn.onmouseout = function () {
+  loginBtn.style.backgroundColor = "cyan";
+};
+
+// Using Event Listener Method: This makes use of the addEventListener() method
+address.addEventListener("mouseover", function () {
+  address.style.backgroundColor = "purple";
+
+  console.log("MouseOver Event");
+});
+
+address.addEventListener("mouseout", function () {
+  address.style.backgroundColor = "aliceblue";
+  console.log("MouseOut Event");
+});

@@ -117,3 +117,40 @@ listPersonalDetails();
 ***** Assignment *****
 
 */
+
+const favoriteBooks = [
+  "Half of a Yellow Sun",
+  "Rooney",
+  "Atomic Habits",
+  "The Power of Habits",
+  "15 Invaluable Laws of Growth",
+  "Grit",
+  "Limitless",
+  "You can't hurt me",
+  "Nobody",
+  "Richest Man in Babylon",
+  "Stoicism",
+  "Be like the Monks",
+];
+
+function displayItem(item) {
+  const newElement = document.createElement("p");
+  newElement.textContent = item;
+  newElement.className = "list-item";
+  wrapper.append(newElement);
+}
+
+for (let i = 0; i < favoriteBooks.length; i++) {
+  const book = favoriteBooks[i];
+
+  displayItem(book);
+}
+
+/*
+***** Assignment 2: Due on Tuesday, 01/02/2022, 7:00AM *****
+- Build a Simple Login Page using HTML / CSS
+- Implement a functionality with Javascript where the Login Button is clicked and a popup appears with the message Login Successful and the content of the Login Button is updated to "Log Out"
+
+***** Assignment 2: Due on Tuesday, 01/02/2022, 7:00AM *****
+
+*/
