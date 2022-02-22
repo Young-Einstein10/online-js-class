@@ -37,3 +37,10 @@ const multiplyNumbers = function (num1, num2) {
 };
 
 sayHello();
+
+// Arrow Functions
+const drinkWater = () => {
+  console.log("I am drinking water.");
+};
+
+const drinkWater = () => console.log("I'm drinking water");
